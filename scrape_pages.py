@@ -59,7 +59,7 @@ for vol in range(1,22):
     for i in range(0,len(page_link)):
         page_link_list.append(page_link[i].get_attribute("href"))
 page_link_list = [s for s in page_link_list if 'title' in s]  #drop other irrelevant links in the page
-with open('page_link_list.txt', 'w') as f:
+with open('./data/page_link_list.txt', 'w') as f:
     for line in page_link_list:
         f.write(f"{line}\n")
 
@@ -105,4 +105,4 @@ sahife_df['year'] = pd.to_numeric(sahife_df['year'])
 sahife_df = sahife_df.drop(columns=['shamsi_date','numerics'])
 
 #save the final dataframe which is the main data
-sahife_df.to_excel("sahifeh.xlsx")
+sahife_df.to_excel("./data/sahifeh.xlsx")
